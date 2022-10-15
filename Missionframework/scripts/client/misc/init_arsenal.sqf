@@ -96,7 +96,8 @@ if (KP_liberation_arsenalUsePreset) then {
     };
 
     if (KP_liberation_ace && KP_liberation_arsenal_type) then {
-        [player, KP_liberation_allowed_items, false] call ace_arsenal_fnc_addVirtualItems;
+        // [player, KP_liberation_allowed_items, false] call ace_arsenal_fnc_addVirtualItems;
+        [player, KP_liberation_allowed_items_extension, false] call ace_arsenal_fnc_addVirtualItems;
     };
 
     // Lowercase all classnames
