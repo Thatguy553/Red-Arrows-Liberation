@@ -643,20 +643,20 @@ BloodLust_FallingVaporizationSpeedThreshold = 20;
 BloodLust_GibBleedDuration = 3;
 BloodLust_IsArterialBloodSprayEnabled = true;
 BloodLust_IsBleedingEnabled = true;
-BloodLust_IsBleedingTiedToUnitState = false;
+force BloodLust_IsBleedingTiedToUnitState = true;
 BloodLust_IsBloodLustEnabled = true;
 BloodLust_IsBloodLustEnabledForDeadUnits = true;
 force BloodLust_IsBloodPoolingEnabled = true;
 BloodLust_IsBloodSprayEnabled = true;
 BloodLust_IsBloodTrailEnabled = true;
 BloodLust_IsCleanUpEnabled = true;
-BloodLust_IsFallingVaporizationEnabled = true;
+force BloodLust_IsFallingVaporizationEnabled = true;
 force BloodLust_IsMultiplayerCoreEnabledInSingleplayer = true;
-force BloodLust_IsSplatteringEnabledForUnitsInVehicles = true;
+force BloodLust_IsSplatteringEnabledForUnitsInVehicles = false;
 BloodLust_IsUnderCharacterBloodSplatterEnabled = true;
 BloodLust_IsUnitVehicleCollisionEffectsEnabled = true;
 BloodLust_IsVaporizationEnabled = true;
-BloodLust_IsVaporizationEnabledOnPlayer = true;
+BloodLust_IsVaporizationEnabledOnPlayer = false;
 force BloodLust_IsVaporizedGibCamSwitchEnabled = true;
 BloodLust_IsVaporizedHeatWaveEnabled = true;
 BloodLust_IsVehicleCrewVaporizationEnabled = true;
@@ -904,6 +904,33 @@ force diwako_dui_radar_sqlFirst = false;
 force diwako_dui_radar_syncGroup = false;
 force diwako_dui_radar_vehicleCompassEnabled = false;
 diwako_dui_use_layout_editor = false;
+
+// Improved Melee System (Client Settings)
+IMS_CustomCamer_Y = 3;
+IMS_CustomCameraUsedByUserAllowed = true;
+IMS_EnablePlayerSounds = true;
+IMS_HudCoordinate_X = 0.01;
+IMS_HudCoordinate_Y = 0.9;
+IMS_ShowHealthHud = true;
+
+// Improved Melee System (Server Settings)
+IMS_AddKnifeToUnit = false;
+IMS_BayonetDistance = "6";
+force IMS_BayonetOnAI = true;
+force IMS_BluntWeapon = true;
+IMS_CustomAIHEALTH = "2";
+IMS_DamageMultiplierParam = "1";
+IMS_DamageMultiplierParamPlayer = "1";
+IMS_ExecutionChanceParametr = "20";
+IMS_isFistsAllowd = true;
+IMS_isHumansCanHitSM = false;
+IMS_isImsCanHitAllies = true;
+IMS_isKickButtInstaKill = true;
+force IMS_isStaticDeaths = true;
+IMS_RifleDodgeSet = true;
+IMS_StealthAI_Ears = 15;
+IMS_StealthAI_Eyes = 40;
+IMS_WBK_CUSTOMCAMSERVER = false;
 
 // Enhanced Movement Rework
 force emr_main_allowMidairClimbing = true;

@@ -64,6 +64,13 @@ if ((isNil {player getVariable "bis_revive_ehHandleHeal"} || isDedicated) && !(b
 		_vehicle addMagazineTurret ["rhs_mag_3vo18_10", [0]];
 	};
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
+["O_Heli_Light_02_dynamicLoadout_F", "initPost", {
+    params ["_vehicle"];
+
+	_vehicle setObjectTextureGlobal [0, "a3\air_f\heli_light_02\data\heli_light_02_ext_co.paa"];
+	
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;
+
 // [] execVM "VAM_GUI\VAM_GUI_init.sqf";
 // [] execVM "scripts\client\actions\do_repair.sqf";
 
