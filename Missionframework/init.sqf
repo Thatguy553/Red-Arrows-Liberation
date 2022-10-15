@@ -76,6 +76,6 @@ if (isServer) then {
 };
 
 // Disable RHS Decals, Save some Frames.
-RHSDecalsOff = true;
+RHSDecalsOff = false;
 
 [] spawn VCM_fnc_VcomInit;
