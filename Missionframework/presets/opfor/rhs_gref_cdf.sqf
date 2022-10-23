@@ -61,7 +61,7 @@ militia_squad = [
 
 // Militia vehicles. Lightweight vehicle classnames the game will pick from randomly as sector defenders.
 militia_vehicles = [
-    (selectRandom ["rhsgref_cdf_reg_M252", "rhsgref_cdf_reg_uaz_dshkm", "rhsgref_cdf_reg_uaz_dshkm"]),
+    (selectRandom ["rhsgref_cdf_reg_M252", "rhsgref_cdf_reg_uaz_dshkm"]),
     "rhsgref_BRDM2",
     "rhsgref_cdf_reg_uaz_ags",                                                 // GAZ-233014 (Armed)
     "rhsgref_cdf_reg_uaz_dshkm",                                                 // GAZ-233014 (Armed)

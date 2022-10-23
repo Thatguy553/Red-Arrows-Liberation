@@ -17,7 +17,7 @@ FOB_box_typename = "B_Slingload_01_Cargo_F";                            // This 
 FOB_truck_typename = "rhs_gaz66_r142_msv";                              // This is the FOB as a vehicle.
 Arsenal_typename = "O_supplyCrate_F";                                   // This is the virtual arsenal as portable supply crates.
 Respawn_truck_typename = "rhs_gaz66_ap2_msv";                           // This is the mobile respawn (and medical) truck.
-huron_typename = "RHS_Mi8mt_vvs";                                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
+huron_typename = "OWP_MI26cg";                                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
 crewman_classname = "B_crew_F";                                         // This defines the crew for vehicles.
 pilot_classname = "B_Helipilot_F";                                      // This defines the pilot for helicopters.
 fixed_wing_classname = "B_Pilot_F";                                     // This defines the pilot for fixed wing aircraft.
@@ -131,6 +131,7 @@ air_vehicles = [
     ["O_UAV_06_F",80,0,30],                                             // AL-6 Jinaah (Cargo)
     ["rhs_ka60_grey",200,0,100],                                           // KA-60
     ["RHS_Mi8mt_Cargo_vvs",225,0,125],                                       // Mi-8AMT (Unarmed)
+    ["OWP_MI26cg",300,0,200],                                       // Mi-8AMT (Unarmed)
     ["RHS_Mi8MTV3_heavy_vvs",225,200,125],                                    // Mi-8MTV-3
     ["RHS_Ka52_vvs",500,500,200],                                      // Ka-52
     ["RHS_Mi24V_vvs",300,300,250],                                      // Mi-24V

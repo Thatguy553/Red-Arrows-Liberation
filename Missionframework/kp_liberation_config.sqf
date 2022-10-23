@@ -209,7 +209,7 @@ GRLIB_respawn_marker = "respawn";                                       // Respa
 
 GRLIB_color_friendly = "ColorBLUFOR";                                   // Friendly sector marker color.
 GRLIB_color_enemy = "ColorGUER";                                       // Enemy sector marker color.
-GRLIB_color_enemy_bright = " ColorGREEN";                                  // Enemy sector marker color (activated).
+GRLIB_color_enemy_bright = "ColorGREEN";                                  // Enemy sector marker color (activated).
 
 GRLIB_fob_range = 200;                                                  // Build range around the main FOB building.
 GRLIB_halo_altitude = 4000;                                             // Altitude in metres for the HALO jump.
@@ -218,7 +218,7 @@ GRLIB_secondary_objective_impact = 0.4;                                 // The p
 GRLIB_recycling_percentage = 0.7;                                       // Percentage of resources you get back from recycling.
 KP_liberation_production_interval = 20;                                 // Time in minutes until a production process is finished, when resources multiplier is set to 1.
 
-GRLIB_sector_size = 1000;                                               // Range to activate a sector.
+GRLIB_sector_size = 500;                                               // Range to activate a sector.
 GRLIB_capture_size = 175;                                               // Range to capture a sector.
 GRLIB_defended_buildingpos_part = 0.4;                                  // Multiplier for defenders in buildings.
 GRLIB_battlegroup_size = 6;                                             // Size of enemy battlegroups.
@@ -226,7 +226,7 @@ GRLIB_vulnerability_timer = 60;                                         // Time 
 GRLIB_radiotower_size = 2500;                                           // Radio Tower scanning range.
 GRLIB_surrender_chance = 50;                                            // Chance that enemy infantry will surrender after heavy losses are encountered.
 
-GRLIB_civilians_amount = 10;                                            // Civilian count multiplier.
+GRLIB_civilians_amount = 5;                                            // Civilian count multiplier.
 GRLIB_cleanup_delay = 1200;                                             // Time in seconds until bodies of dead soldiers are cleaned up.
 
 GRLIB_blufor_cap = 100;                                                 // Cap for BLUFOR.
@@ -481,6 +481,7 @@ KPLIB_transportConfigs = [
     ["uns_nvatruck", -5, [0,-1.05,0.8], [0,-2.75,0.8]],
     ["vn_b_wheeled_m54_01", -5, [0,-0.8,0.18], [0,-2.5,0.18]],
     ["vn_b_wheeled_m54_02", -5, [0,-0.8,0.18], [0,-2.5,0.18]],
+    ["OWP_MI26cg", -5, [0.937195,-4.77649,2.22572],[-0.957428,-4.77649,2.22572],[-0.957428,-3.0594,2.22572],[0.937195,-3.0594,2.22572],[0.937195,-1.40163,2.22572],[-0.957428,-1.40163,2.22572],[-0.957428,0.296753,2.22572],[0.937195,0.296753,2.22572],[0.937195,1.97278,2.22572],[-0.957428,3.66081,2.22572],[-0.957428,1.97278,1.62719],[-0.957428,0.296753,1.62976],[-0.957428,-1.40163,1.63424],[-0.957428,-3.0594,1.62961],[-0.957428,-4.77649,1.71455],[0.937195,1.66081,1.66692],[0.937195,1.97278,1.62719],[0.937195,0.296753,1.62976],[0.937195,-1.40163,1.63424],[0.937195,-3.0594,1.62961],[0.937195,-4.77649,1.75107],[-0.957428,1.66081,2.22572],[-0.957428,1.97278,2.22572],[-0.957428,1.66081,-3.66692],[0.937195,1.66081,2.22572]],
     ["vn_o_wheeled_z157_01", -5.5, [0,-1.2,0.18], [0,-2.9,0.18]]
 ];
 
