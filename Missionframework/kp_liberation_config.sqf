@@ -201,15 +201,15 @@ GRLIB_save_key = "KP_LIBERATION_" + (toUpper worldName) + "_SAVEGAME";
 
 KP_liberation_save_interval = 60;                                       // Interval in seconds for automatic save.
 
-GRLIB_side_friendly = EAST;                                             // Friendly side.
-GRLIB_side_enemy = RESISTANCE;                                                // Enemy side.
-GRLIB_side_resistance = WEST;                                     // Resistance side.
+GRLIB_side_friendly = WEST;                                             // Friendly side.
+GRLIB_side_enemy = EAST;                                                // Enemy side.
+GRLIB_side_resistance = RESISTANCE;                                     // Resistance side.
 GRLIB_side_civilian = CIVILIAN;                                         // Civilian side.
 GRLIB_respawn_marker = "respawn";                                       // Respawn marker name.
 
 GRLIB_color_friendly = "ColorBLUFOR";                                   // Friendly sector marker color.
-GRLIB_color_enemy = "ColorGUER";                                       // Enemy sector marker color.
-GRLIB_color_enemy_bright = "ColorGREEN";                                  // Enemy sector marker color (activated).
+GRLIB_color_enemy = "ColorOPFOR";                                       // Enemy sector marker color.
+GRLIB_color_enemy_bright = "ColorRED";                                  // Enemy sector marker color (activated).
 
 GRLIB_fob_range = 200;                                                  // Build range around the main FOB building.
 GRLIB_halo_altitude = 4000;                                             // Altitude in metres for the HALO jump.

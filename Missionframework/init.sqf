@@ -55,8 +55,6 @@ if ((isNil {player getVariable "bis_revive_ehHandleHeal"} || isDedicated) && !(b
     [] call bis_fnc_reviveInit;
 };
 
-["Plane", "initPost", {(_this select 0) setVariable ["ace_pylons_magazineBlacklist", ["FSN_Diamondback_Missile_M","FSN_B61_Nuclear_M", "FSN_Nuclear_Missile_M", "FSN_Nuclear_Cruise_Missile_M", "FSN_B83_Nuclear_M"]];}, true, [], true] call CBA_fnc_addClassEventHandler;
-["Helicopter", "initPost", {(_this select 0) setVariable ["ace_pylons_magazineBlacklist", ["FSN_Diamondback_Missile_M","FSN_B61_Nuclear_M", "FSN_Nuclear_Missile_M", "FSN_Nuclear_Cruise_Missile_M", "FSN_B83_Nuclear_M"]];}, true, [], true] call CBA_fnc_addClassEventHandler;
 ["rhs_2b14_82mm_vdv", "initPost", {
     params ["_vehicle"];
 
@@ -70,8 +68,31 @@ if ((isNil {player getVariable "bis_revive_ehHandleHeal"} || isDedicated) && !(b
 	_vehicle setObjectTextureGlobal [0, "a3\air_f\heli_light_02\data\heli_light_02_ext_co.paa"];
 	
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
+// Jukebox init/pylon restriction
+[] execvm "scripts\ROS_3dJukebox.sqf";
+["Plane", "initPost", {
+    (_this select 0) setVariable ["ace_pylons_magazineBlacklist", ["FSN_Diamondback_Missile_M","FSN_B61_Nuclear_M", "FSN_Nuclear_Missile_M", "FSN_Nuclear_Cruise_Missile_M", "FSN_B83_Nuclear_M"]];
+    (_this select 0) addAction ["<img size='1' color='#99ccff' shadow='2' image='images\play.paa'/>PLAY", {params ["_target"]; [_target] spawn ROS_JukePlay_fnc;},"",-1,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ccccff' shadow='2' image='images\next.paa'/>NEXT", {params ["_target"]; [_target] spawn ROS_JukeNext_fnc;},"",-2,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ff9999' shadow='2' image='images\stop.paa'/>STOP", {params ["_target"]; [_target] spawn ROS_JukeOff_fnc;},"",-3,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+["Helicopter", "initPost", {
+    (_this select 0) setVariable ["ace_pylons_magazineBlacklist", ["FSN_Diamondback_Missile_M","FSN_B61_Nuclear_M", "FSN_Nuclear_Missile_M", "FSN_Nuclear_Cruise_Missile_M", "FSN_B83_Nuclear_M"]];
+    (_this select 0) addAction ["<img size='1' color='#99ccff' shadow='2' image='images\play.paa'/>PLAY", {params ["_target"]; [_target] spawn ROS_JukePlay_fnc;},"",-1,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ccccff' shadow='2' image='images\next.paa'/>NEXT", {params ["_target"]; [_target] spawn ROS_JukeNext_fnc;},"",-2,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ff9999' shadow='2' image='images\stop.paa'/>STOP", {params ["_target"]; [_target] spawn ROS_JukeOff_fnc;},"",-3,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+["car", "initPost", {
+    (_this select 0) addAction ["<img size='1' color='#99ccff' shadow='2' image='images\play.paa'/>PLAY", {params ["_target"]; [_target] spawn ROS_JukePlay_fnc;},"",-1,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ccccff' shadow='2' image='images\next.paa'/>NEXT", {params ["_target"]; [_target] spawn ROS_JukeNext_fnc;},"",-2,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ff9999' shadow='2' image='images\stop.paa'/>STOP", {params ["_target"]; [_target] spawn ROS_JukeOff_fnc;},"",-3,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+["tank", "initPost", {
+    (_this select 0) addAction ["<img size='1' color='#99ccff' shadow='2' image='images\play.paa'/>PLAY", {params ["_target"]; [_target] spawn ROS_JukePlay_fnc;},"",-1,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ccccff' shadow='2' image='images\next.paa'/>NEXT", {params ["_target"]; [_target] spawn ROS_JukeNext_fnc;},"",-2,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+    (_this select 0) addAction ["<img size='1' color='#ff9999' shadow='2' image='images\stop.paa'/>STOP", {params ["_target"]; [_target] spawn ROS_JukeOff_fnc;},"",-3,true,true,"","((player distance _target <2 && player == (leader group player) && vehicle player == player) or (player == driver vehicle player && vehicle player != player))"];
+}, true, [], true] call CBA_fnc_addClassEventHandler;
 
-// [] execVM "VAM_GUI\VAM_GUI_init.sqf";
 // [] execVM "scripts\client\actions\do_repair.sqf";
 
 KPLIB_init = true;

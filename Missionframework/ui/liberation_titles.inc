@@ -12,6 +12,85 @@ class CfgSounds {
 		sound[] = { "audio\oof.ogg", 1, 1, 100 };
 		titles[] = {};
 	};
+
+    class banana_phone
+	{
+		name="Banana_Phone";
+		sound[] = {"sound\banana_phone.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class black_betty
+	{
+		name="black_betty";
+		sound[] = {"sound\black_betty.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class down_with_sickness
+	{
+		name="Down with the sickness";
+		sound[] = {"sound\c_down_with_sickness.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class got_what_i_need
+	{
+		name="You got what I need";
+		sound[] = {"sound\c_got_what_i_need.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class hells_bells
+	{
+		name="Hells Bells";
+		sound[] = {"sound\c_hells_bells.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class no_rest_wicked
+	{
+		name="No rest for the wicked";
+		sound[] = {"sound\c_no_rest_wicked.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class nothing_else_matters
+	{
+		name="Nothing else matters";
+		sound[] = {"sound\c_nothing_else_matters.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class one
+	{
+		name="One";
+		sound[] = {"sound\c_one.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class stfu
+	{
+		name="Stfu";
+		sound[] = {"sound\c_stfu.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class sweet_home_alabama
+	{
+		name="Sweet Home Alabama";
+		sound[] = {"sound\c_sweet_home_alabama.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class the_unforgiven
+	{
+		name="The Unforgiven";
+		sound[] = {"sound\c_the_unforgiven.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class thunderstruck
+	{
+		name="Thunderstruck";
+		sound[] = {"sound\c_thunderstruck.ogg", 1, 1, 100};
+		titles[] = {};
+	};
+    class till_i_collapse
+	{
+		name="Till I collapse";
+		sound[] = {"sound\c_till_i_collapse.ogg", 1, 1, 100};
+		titles[] = {};
+	};
 };
 
 class RscTitles {

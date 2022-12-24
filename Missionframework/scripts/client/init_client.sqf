@@ -52,10 +52,10 @@ execVM "scripts\client\commander\enforce_whitelist.sqf";
 execVM "scripts\client\markers\empty_vehicles_marker.sqf";
 execVM "scripts\client\markers\fob_markers.sqf";
 if (!KP_liberation_high_command && KP_liberation_mapmarkers) then {execVM "scripts\client\markers\group_icons.sqf";};
-//execVM "scripts\client\markers\hostile_groups.sqf";
+execVM "scripts\client\markers\hostile_groups.sqf";
 if (KP_liberation_mapmarkers) then {execVM "scripts\client\markers\huron_marker.sqf";} else {deleteMarkerLocal "huronmarker"};
 execVM "scripts\client\markers\sector_manager.sqf";
-//execVM "scripts\client\markers\spot_timer.sqf";
+execVM "scripts\client\markers\spot_timer.sqf";
 //execVM "scripts\client\misc\broadcast_squad_colors.sqf";
 execVM "scripts\client\misc\init_arsenal.sqf";
 execVM "scripts\client\misc\permissions_warning.sqf";
@@ -70,7 +70,7 @@ execVM "scripts\client\ui\tutorial_manager.sqf";
 execVM "scripts\client\markers\update_production_sites.sqf";
 execVM "scripts\client\misc\briefing.sqf";
 execVM "scripts\client\misc\jarvis.sqf";
-// execVM "scripts\client\misc\acre_preset.sqf";
+execVM "scripts\client\misc\acre_preset.sqf";
 //execVM "scripts\client\misc\snake.sqf";
 
 player addMPEventHandler ["MPKilled", {_this spawn kill_manager;}];
@@ -169,4 +169,4 @@ if (player isEqualTo ([] call KPLIB_fnc_getMilitarypolice1)) then {
 };
 
 // remove ACRE radios
-// [player] call KPLIB_fnc_removeAcreRadios;
+[player] call KPLIB_fnc_removeAcreRadios;
