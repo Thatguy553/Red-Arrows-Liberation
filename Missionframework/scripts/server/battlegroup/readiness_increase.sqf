@@ -18,7 +18,7 @@ waitUntil {!isNil "save_is_loaded" && {save_is_loaded}};
             stats_readiness_earned = stats_readiness_earned + 0.25;
         };
     };
-    
+
     if (combat_readiness > 100.0 && GRLIB_difficulty_modifier < 2) then {combat_readiness = 100.0};
 
     }, 360, []

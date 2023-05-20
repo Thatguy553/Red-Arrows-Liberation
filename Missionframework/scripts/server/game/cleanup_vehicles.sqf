@@ -16,9 +16,9 @@ _cleanup_classnames = [];
                 _reset_ticker = true;
                 _nextvehicle = _x;
                 _nearestfob = [ getpos _nextvehicle ] call KPLIB_fnc_getNearestFob;
-                
+
                 if ( count _nearestfob isEqualTo 3 ) then {
-                    
+
                     if ( ( _nextvehicle distance _nearestfob > ( 1.2 * GRLIB_fob_range ) ) && ( _nextvehicle distance startbase > ( 1.2 * GRLIB_fob_range ) ) ) then {
                         if ((toLower (typeof _nextvehicle)) in _cleanup_classnames) then {
                             if ( count ( crew _nextvehicle ) isEqualTo 0 ) then {

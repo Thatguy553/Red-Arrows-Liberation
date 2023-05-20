@@ -183,7 +183,7 @@ while {deleteManagerPublic} do {
 	};
 	sleep 1;
 	//================================= ORPHANED MP TRIGGERS.
-	if (_orphanedTriggers) then {	
+	if (_orphanedTriggers) then {
 		{
 			if ((_x distance [0,0,0]) < 1) then {
 				deleteVehicle _x;

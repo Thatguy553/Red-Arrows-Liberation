@@ -15,7 +15,7 @@ managed_areas = [];
         params ["_args"];
         _args params [];
 
-        if ([5] call KPLIB_fnc_hasPermission) then {
+    if ([5] call KPLIB_fnc_hasPermission) then {
 
         _nearammoboxes = ((getpos player) nearEntities [KPLIB_crates, 10]);
         _neartransporttrucks = ((getpos player) nearEntities [KPLIB_transport_classes, 10]);
@@ -94,10 +94,9 @@ managed_areas = [];
                     _next_area setVariable ["KP_ammo_unstore_action", _action_id2, false];
                     _action_id3 = _next_area addAction ["<t color='#FFFF00'>" + localize "STR_ACTION_UNSTORE_FUEL" + "</t>",{[KP_liberation_fuel_crate, (_this select 0), true] call KPLIB_fnc_crateFromStorage;},"",-506,true,true,"","build_confirmed isEqualTo 0 && (_this distance _target < 12) && (isNull objectParent player)"];
                     _next_area setVariable ["KP_fuel_unstore_action", _action_id3, false];
-                    // Removed Stack and Sort due to duplication exploit
-                    // _action_id4 = _next_area addAction ["<t color='#FFFF00'>" + localize "STR_ACTION_SORT_STORAGE" + "</t>",{[(_this select 0)] call KPLIB_fnc_sortStorage;},"",-507,true,true,"","build_confirmed isEqualTo 0 && (_this distance _target < 12) && (isNull objectParent player)"];
-                    // _next_area setVariable ["KP_storage_sort_action", _action_id4, false];
-                    managed_areas pushback _next_area;
+                    _action_id4 = _next_area addAction ["<t color='#FFFF00'>" + localize "STR_ACTION_SORT_STORAGE" + "</t>",{[(_this select 0)] call KPLIB_fnc_sortStorage;},"",-507,true,true,"","build_confirmed == 0 && (_this distance _target < 12) && (vehicle player == player)"];
+                    _next_area setVariable ["KP_storage_sort_action", _action_id4, false];
+                    _managed_areas pushback _next_area;
             };
 
             if ((_next_area in managed_areas) && _area_load isEqualTo 0) then {

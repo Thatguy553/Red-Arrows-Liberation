@@ -5,7 +5,8 @@ if ( count GRLIB_all_fobs >= GRLIB_maximum_fobs ) exitWith {
 };
 
 _minfobdist = 1000;
-_minsectordist = GRLIB_capture_size + GRLIB_fob_range;
+// _minsectordist = GRLIB_capture_size + GRLIB_fob_range;
+_minsectordist = 0;
 _distfob = 1;
 _clearedtobuildfob = true;
 _distsector = 1;
@@ -39,7 +40,13 @@ if (!_clearedtobuildfob) then {
     FOB_build_in_progress = false;
     publicVariable "FOB_build_in_progress";
 } else {
-    buildtype = 99;
-    dobuild = 1;
-    deleteVehicle (_this select 0);
+    if ( !_clearedtobuildsector ) then {
+        hint format [localize "STR_FOB_BUILDING_IMPOSSIBLE_SECTOR",floor _minsectordist,floor _distsector];
+        FOB_build_in_progress = false;
+        publicVariable "FOB_build_in_progress";
+    } else {
+        buildtype = 99;
+        dobuild = 1;
+        deleteVehicle (_this select 0);
+    };
 };

@@ -38,7 +38,7 @@ active_sectors = []; publicVariable "active_sectors";
 execVM "scripts\server\base\startgame.sqf";
 execVM "scripts\server\base\huron_manager.sqf";
 execVM "scripts\server\base\startvehicle_spawn.sqf";
-//[] call KPLIB_fnc_createSuppModules;
+[] call KPLIB_fnc_createSuppModules;
 execVM "scripts\server\battlegroup\counter_battlegroup.sqf";
 execVM "scripts\server\battlegroup\random_battlegroups.sqf";
 execVM "scripts\server\battlegroup\readiness_increase.sqf";
@@ -55,7 +55,7 @@ execVM "scripts\server\game\synchronise_eco.sqf";
 execVM "scripts\server\game\zeus_synchro.sqf";
 execVM "scripts\server\offloading\show_fps.sqf";
 execVM "scripts\server\patrols\civilian_patrols.sqf";
-//execVM "scripts\server\patrols\manage_patrols.sqf";
+// execVM "scripts\server\patrols\manage_patrols.sqf";
 execVM "scripts\server\patrols\reinforcements_resetter.sqf";
 if (KP_liberation_ailogistics) then {execVM "scripts\server\resources\manage_logistics.sqf";};
 execVM "scripts\server\resources\manage_resources.sqf";
@@ -65,11 +65,6 @@ execVM "scripts\server\resources\recalculate_timer_sector.sqf";
 execVM "scripts\server\resources\unit_cap.sqf";
 execVM "scripts\server\sector\lose_sectors.sqf";
 execVM "scripts\server\custom\cleanup.sqf";
-
-// Ambush script
-if (worldName isEqualTo "Cam_Lao_Nam") then {
-    execVM "scripts\server\ambush\ambush_init.sqf";
-};
 
 KPLIB_fsm_sectorMonitor = [] call KPLIB_fnc_sectorMonitor;
 if (KP_liberation_high_command) then {KPLIB_fsm_highcommand = [] call KPLIB_fnc_highcommand;};
@@ -92,14 +87,6 @@ switch (KP_liberation_preset_opfor) do {
             "scripts\fob_templates\unsung\template3.sqf",
             "scripts\fob_templates\unsung\template4.sqf",
             "scripts\fob_templates\unsung\template5.sqf"
-        ];
-    };
-    case 23: {
-        KPLIB_fob_templates = [
-            "scripts\fob_templates\sogpf\template1.sqf",
-            "scripts\fob_templates\sogpf\template2.sqf",
-            "scripts\fob_templates\sogpf\template3.sqf",
-            "scripts\fob_templates\sogpf\template4.sqf"
         ];
     };
     default {
@@ -149,15 +136,17 @@ execVM "scripts\server\custom\fn_advancedTowingInit.sqf";
 // Enable Advanced Sling
 execVM "scripts\server\custom\fn_advancedSlingLoadingInit.sqf";
 
-// Not Needed
-// [
-//     {
-//         params ["_args"];
-//         _args params [];
+addMissionEventHandler [
+    "EntityKilled",
+    {
+        params ["_unit", "_killer", "_instigator"];
+        _unitSide = side (group _unit);
+        _killerSide = side (group _killer);
 
-//         zeus_whitelist = "cavzeus" callExtension "";
-//         publicVariable "zeus_whitelist";
-
-//     }, 60, []
-
-// ] call CBA_fnc_addPerFrameHandler;
+        private["_friendlySide"];
+        _friendlySide = WEST;
+        if !(isPlayer _killer && !(_killerSide == _friendlySide) && !(["error", _killer] call BIS_fnc_inString) && !(["error", _unit] call BIS_fnc_inString)) exitWith {
+            [format["%1 was killed by %2 %3", name _unit, name _killer, ""] ] remoteExec ["systemChat", -2];
+        };
+    }
+];

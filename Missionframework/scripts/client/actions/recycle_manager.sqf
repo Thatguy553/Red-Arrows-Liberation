@@ -19,7 +19,7 @@ veh_action_distance = 10;
         params ["_args"];
         _args params ["_recycleable_vehicles", "_recycleable_classnames"];
 
-        if ([4] call KPLIB_fnc_hasPermission) then {
+    if ([4] call KPLIB_fnc_hasPermission) then {
         private _detected_vehicles = (getPos player) nearObjects veh_action_detect_distance select {
             (((toLower (typeof _x)) in _recycleable_classnames && (({alive _x} count (crew _x)) == 0 || unitIsUAV _x) && (locked _x == 0 || locked _x == 1)) ||
             (toLower (typeOf _x)) in KPLIB_b_buildings_classes ||
@@ -33,8 +33,8 @@ veh_action_distance = 10;
                 (((attachedObjects _x) select {!isNull _X}) isEqualTo [])
                 || ((typeOf _x) == "rhsusf_mkvsoc")
             ) &&
-            _x distance2d startbase > 1000 && 
-            // [] call KPLIB_fnc_getNearestFob isNotEqualTo [] &&
+            _x distance2d startbase > 1000 &&
+            [] call KPLIB_fnc_getNearestFob isNotEqualTo [] &&
             (_x distance2d ([] call KPLIB_fnc_getNearestFob)) < GRLIB_fob_range &&
             (getObjectType _x) >= 8
         };

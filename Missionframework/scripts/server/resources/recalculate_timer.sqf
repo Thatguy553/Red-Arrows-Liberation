@@ -5,7 +5,7 @@ waitUntil {save_is_loaded};
     {
         
         please_recalculate = true;
-    
+
     }, 10, []
 
 ] call CBA_fnc_addPerFrameHandler;

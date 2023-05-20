@@ -1,14 +1,14 @@
 if (!isDedicated) then {
- 
+
 waitUntil { alive player && time > 0 && !isnull (finddisplay 46)};
- 
+
 sleep 5;
 
 player createDiarySubject ["serverrules","Server Rules"];
- 
+
 player createDiaryRecord ["serverrules",
 [
-"Server Rules", 
+"Server Rules",
 "
 <br/><font color = '#E4E00C'>No fratricide or destruction of friendly equipment</font color><br/>
 
@@ -122,25 +122,25 @@ player createDiaryRecord ["radioinformation", ["Frequencies",
 <br/>            Used to call in fixed-wing or attack rotary close air support
 <br/>
 <font face='EtelkaMonospacePro' size='10'><br/>14 - Ground-To-Air</font>
-<br/>            Used to conduct pick-up requests from logistical aviation units 
+<br/>            Used to conduct pick-up requests from logistical aviation units
 <br/>
 <font face='EtelkaMonospacePro' size='10'><br/>15 - Logistics</font>
-<br/>            Used by ATLAS personnel to dispatch where needed. 
+<br/>            Used by ATLAS personnel to dispatch where needed.
 <br/>
 <font face='EtelkaMonospacePro' size='10'><br/>16 - FARP Requests</font>
 <br/>            Used to communicate with ATLAS personnel when you are inbound to a FARP.
 <br/>
 <font face='EtelkaMonospacePro' size='10'><br/>17 - Convoy</font>
-<br/>            Used when conducting a convoy 
+<br/>            Used when conducting a convoy
 <br/>
 <font face='EtelkaMonospacePro' size='10'><br/>18 - Zeus</font>
-<br/>            Used to communicate with a Zeus if required 
+<br/>            Used to communicate with a Zeus if required
 <br/>
 <font face='EtelkaMonospacePro' size='10'><br/>19 - CAG</font>
-<br/>            Classified 
+<br/>            Classified
 <br/>
 <font face='EtelkaMonospacePro' size='10'><br/>20 - Command</font>
-<br/>            Used to coordinate across different platoons or other big picture items 
+<br/>            Used to coordinate across different platoons or other big picture items
 <br/>
 "
 ]];

@@ -2,7 +2,7 @@
     File: description.ext
     Author: KP Liberation Dev Team - https://github.com/KillahPotatoes
     Date: 2017-10-16
-    Last Update: 2021-04-25
+    Last Update: 2020-05-09
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -109,34 +109,35 @@ respawnOnStart = 0;
 // 1 = All                  - All units are managed by the manager
 // 2 = None_But_Respawned   - Only units that can respawn are managed by the manager
 // 3 = All_But_Respawned    - All units are managed by the manager with exception of respawned (opposite to mode 2)
-corpseManagerMode = 1;
+corpseManagerMode = 0;
 
 // Corpse limit before which (<=) corpseRemovalMaxTime applies and after which (>) corpseRemovalMinTime applies.
-corpseLimit = 10;
+corpseLimit = 50;
 
 // Remove all bodies that have been dead longer than corpseRemovalMinTime when corpseLimit is reached.
-corpseRemovalMinTime = 1200;
+corpseRemovalMinTime = 600;
 
 // Maximum time a corpse can remain on the ground if total number of corpses is equal or under corpseLimit.
 corpseRemovalMaxTime = 3600;
+
 // Sets the mode for wreck removal manager.
 // 0 = None                 - None of the vehicles are managed by the manager
 // 1 = All                  - All vehicles are managed by the manager
 // 2 = None_But_Respawned   - Only vehicles that can respawn are managed by the manager
 // 3 = All_But_Respawned    - All vehicles are managed by the manager with exception of respawned (opposite to mode 2)
-wreckManagerMode = 0;
+wreckManagerMode = 1;
 
 // Vehicle wreck limit before which (<=) wreckRemovalMaxTime applies and after which (>) wreckRemovalMinTime applies.
-wreckLimit = 10;
+wreckLimit = 20;
 
 // Remove all wrecks that have existed longer than wreckRemovalMinTime when wreckLimit is breached.
 wreckRemovalMinTime = 1200;
 
 // Maximum time a wreck can remain on the ground if total number of wrecks is equal or under wreckLimit.
-wreckRemovalMaxTime = 3600;
+wreckRemovalMaxTime = 7200;
 
 // The minimum distance between corpse or wreck and nearest player before the corpse or wreck is allowed to be removed by the garbage collector.
-minPlayerDistance = 500;
+minPlayerDistance = 1000;
 
 
 /*
@@ -216,7 +217,7 @@ taskManagement_drawDist = 5000;
 */
 
 class CfgDebriefing {
-    #include "KPLIB_debriefs.inc"
+    #include "KPLIB_debriefs.hpp"
 };
 
 class CfgDiscordRichPresence {
@@ -231,48 +232,23 @@ class CfgDiscordRichPresence {
 };
 
 class CfgFunctions {
-    #include "CfgFunctions.inc"
-    #include "KP\KPPLM\KPPLM_functions.inc"
-    #include "Txu_Info\cfgfunctions.inc"
-    #include "vcom\cfgFunctions.hpp"
+    #include "CfgFunctions.hpp"
+    #include "KP\KPPLM\KPPLM_functions.hpp"
 };
+
 class CfgRespawnTemplates {
 
 };
 
 class CfgTaskDescriptions {
-    #include "scripts\client\tutorial\CfgTaskDescriptions.inc"
+    #include "scripts\client\tutorial\CfgTaskDescriptions.hpp"
 };
 
-class CfgRemoteExec
-{
-	// List of script functions allowed to be sent from client via remoteExec
-	class Functions
-	{
-		mode = 2;
-		jip = 1;		
-		
-		class vcm_serverask { allowedTargets = 0;jip = 1; };
-		class VCM_PublicScript { allowedTargets = 0;jip = 1; };
-		class SpawnScript { allowedTargets = 0;jip = 1; };
-		class enableSimulationGlobal { allowedTargets = 0;jip = 1; };
-		class VCM_fnc_KnowAbout { allowedTargets = 0;jip = 1; };	
-	};
-	
-	
-};
+#include "ui\liberation_interface.hpp"
+#include "ui\liberation_notifications.hpp"
+#include "ui\mission_params.hpp"
 
+#include "GREUH\UI\GREUH_interface.hpp"
+#include "KP\KPGUI\KPGUI_defines.hpp"
+#include "KP\KPPLM\ui\KPPLM_dialog.hpp"
 
-class Extended_PreInit_EventHandlers {
-	VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
-};
-
-#include "ui\liberation_interface.inc"
-#include "ui\liberation_notifications.inc"
-#include "ui\mission_params.inc"
-
-#include "GREUH\UI\GREUH_interface.inc"
-#include "KP\KPGUI\KPGUI_defines.inc"
-#include "KP\KPPLM\ui\KPPLM_dialog.inc"
-
-#include "Txu_Info\CfgControls.inc"

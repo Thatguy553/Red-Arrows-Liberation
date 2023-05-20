@@ -85,9 +85,9 @@ while { dialog && (alive player) && edit_loadout isEqualTo 0 } do {
 
         if (KP_liberation_ace && KP_liberation_arsenal_type) then {
             if (count (_loaded_loadout select 1) == 2) then {
-                player setUnitLoadout ((_loaded_loadout select 1) select 0);
+                [player, _loaded_loadout select 1, true] call CBA_fnc_setLoadout;
             } else {
-                player setUnitLoadout (_loaded_loadout select 1);
+                [player, _loaded_loadout select 1, true] call CBA_fnc_setLoadout;
             }
         } else {
             [player, [profileNamespace, _loaded_loadout]] call BIS_fnc_loadInventory;

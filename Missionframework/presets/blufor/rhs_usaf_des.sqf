@@ -95,11 +95,11 @@ light_vehicles = [
     ["rhsusf_m998_d_4dr",30,0,50],                                     // M998 (4D)
     ["rhsusf_m1151_m2crows_usarmy_d",100,40,50],                      // M1151 (M2 Crows)
     ["rhsusf_m1151_mk19crows_usarmy_d",100,60,50],                    // M1151 (Mk.19 Crows)
-    ["rhsusf_m1165a1_gmv_m134d_m240_socom_d",120,80,50], 
-    ["rhsusf_m1165a1_gmv_m2_m240_socom_d",120,80,50], 
-    ["rhsusf_m1165a1_gmv_mk19_m240_socom_d",120,100,50], 
-    ["rhsusf_M1078A1P2_D_fmtv_usarmy",100,0,70], 
-    ["rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy",120,40,70], 
+    ["rhsusf_m1165a1_gmv_m134d_m240_socom_d",120,80,50],
+    ["rhsusf_m1165a1_gmv_m2_m240_socom_d",120,80,50],
+    ["rhsusf_m1165a1_gmv_mk19_m240_socom_d",120,100,50],
+    ["rhsusf_M1078A1P2_D_fmtv_usarmy",100,0,70],
+    ["rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy",120,40,70],
     ["rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy",90,0,70],
     ["rhsusf_M1220_usarmy_d",120,0,60],                                // M1220
     ["rhsusf_M1237_M2_usarmy_d",120,40,60],                            // M1220 (M2)
@@ -215,7 +215,7 @@ air_vehicles = [
     ["USAF_F22",1300,1300,400],                                         // F-22A Raptor
     ["USAF_F22_EWP_AA",1300,1300,400],                                  // F-22A Raptor (EWP-AA)
     ["USAF_F22_EWP_AG",1300,1300,400],                                  // F-22A Raptor (EWP-AG)
-    ["EAWS_EF2000_GER_CAP",1300,1300,400], 
+    ["EAWS_EF2000_GER_CAP",1300,1300,400],
     ["USAF_F22_Heavy",1500,1500,500],                                   // F-22A Raptor (Heavy)
     ["FIR_F23A_Black",1500,1500,500],
     ["FIR_AV8B_GR9A_2",1000,1000,400],

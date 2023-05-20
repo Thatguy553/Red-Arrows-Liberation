@@ -19,24 +19,6 @@ if (_vehicle isKindOf "RHS_CH_47F") then {
     };
 };
 
-if (_vehicle isKindOf "vn_air_uh1d_02_base") then {
-    if (player isEqualTo gunner _vehicle || player isEqualTo (_vehicle turretUnit [2])) exitWith {
-        _allowed = 1;
-    };
-};
-
-if (_vehicle isKindOf "vn_air_ch34_01_base") then {
-    if (player isEqualTo gunner _vehicle || player isEqualTo (_vehicle turretUnit [2])) exitWith {
-        _allowed = 1;
-    };
-};
-
-if (_vehicle isKindOf "vn_air_oh6a_base") then {
-    if (player isEqualTo (_vehicle turretUnit [1])) exitWith {
-        _allowed = 1;
-    };
-};
-
 if (_allowed isEqualTo 1) exitWith {};
 
 private _permissibleVehicles = [

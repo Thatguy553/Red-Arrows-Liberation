@@ -7,7 +7,7 @@ _maxdist = GRLIB_fob_range;
 _truepos = [];
 _debug_colisions = false;
 KP_vector = true;
-// diag_log ([str _classname, "or", str _vehicle, "was built by", str _grp] joinString " ");
+
 private _object_spheres = [];
 private _fob_spheres = [];
 for "_i" from 1 to 36 do {
@@ -311,7 +311,7 @@ while { true } do {
 
                 [_vehicle] call KPLIB_fnc_addObjectInit;
 
-                if (!(typeOf _vehicle in ignore_clearcargo_items)) then { 
+                if (!(typeOf _vehicle in ignore_clearcargo_items)) then {
                     [_vehicle] call KPLIB_fnc_clearCargo;
                 };
 

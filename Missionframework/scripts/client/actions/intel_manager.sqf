@@ -12,7 +12,7 @@ private _actionned_intel_items = [];
         params ["_args"];
         _args params ["_near_people", "_near_intel", "_actionned_captive_units", "_actionned_intel_items"];
 
-        if ([5] call KPLIB_fnc_hasPermission) then {
+    if ([5] call KPLIB_fnc_hasPermission) then {
         _near_people = (getPosATL player) nearEntities [["Man"], 5];
         _near_intel = (getPosATL player) nearEntities [KPLIB_intelObjectClasses, 5];
         {
@@ -42,7 +42,7 @@ private _actionned_intel_items = [];
                 _actionned_intel_items = _actionned_intel_items - [_x];
             };
         } forEach _actionned_intel_items;
-        } else {
+    } else {
         {
             removeAllActions _x;
             _actionned_captive_units = _actionned_captive_units - [_x];

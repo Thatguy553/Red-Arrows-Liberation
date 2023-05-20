@@ -22,7 +22,7 @@ addMissionEventHandler ["Map", {
 	    params ["_mapIsOpened", "_mapIsForced"];
         _markedveh = [];
         _cfg = configFile >> "cfgVehicles";
-        
+
         {
             if (alive _x && (toLower (typeof _x)) in vehtomark && (count (crew _x)) isEqualTo 0 && (_x distance2d startbase) > 500) then {
                 _markedveh pushback _x;

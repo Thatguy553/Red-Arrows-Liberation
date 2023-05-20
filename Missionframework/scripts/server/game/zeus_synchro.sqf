@@ -25,11 +25,11 @@ private _toAdd = [];
 
         if !(allCurators isEqualTo []) then {
 
-            If (isServer) then { 
-                { 
-                    _x addCuratorEditableObjects [allUnits,true]; 
-                    _x addCuratorEditableObjects [vehicles,true]; 
-                } forEach allCurators;             
+            If (isServer) then {
+                {
+                    _x addCuratorEditableObjects [allUnits,true];
+                    _x addCuratorEditableObjects [vehicles,true];
+                } forEach allCurators;
             };
 
         }

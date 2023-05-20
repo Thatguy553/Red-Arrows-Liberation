@@ -25,15 +25,16 @@ Respawn_truck_typename = "rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy";   // This 
 huron_typename = "rhsusf_CH53E_USMC";                                   // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
 crewman_classname = "B_crew_F";                                         // This defines the crew for vehicles.
 pilot_classname = "B_Helipilot_F";                                      // This defines the pilot for helicopters.
-fixed_wing_classname = "B_Pilot_F";                                     // This defines the pilot for fixed wing aircraft.
+fixed_wing_classname = "B_Fighter_Pilot_F";                             // This defines the pilot for fixed wing aircraft.
 rotary_cas_classname = "B_helicrew_F";                                  // This defines the pilot for rotary cas aircraft.
 rotary_logistics_classname = "B_soldier_repair_F";                      // This defines the pilot for rotary logistics.
 KP_liberation_little_bird_classname = "RHS_MELB_MH6M";                  // These are the little birds which spawn on the Freedom or at Chimera base.
+KP_liberation_little_birdA_classname = "RHS_MELB_AH6M";                 // These are the little birds which spawn on the Freedom or at Chimera base.
 KP_liberation_blackhawk_classname = "RHS_UH60M";                        // These are the blackhawks which spawn at the Freedom or at Chimera base.
 KP_liberation_black_wasp_classname = "rhsusf_f22";                      // These are the F/A-181 Black Wasp IIs that spawn at the freedom or Chimera base.
 KP_liberation_a10_classname = "USAF_A10";                               // A-10C
 KP_liberation_boat_classname = "B_T_Boat_Armed_01_minigun_F";           // These are the boats which spawn at the stern of the Freedom.
-KP_liberation_big_boat_classname = "rhsusf_mkvsoc";           // These are the boats which spawn at the stern of the Freedom.
+KP_liberation_big_boat_classname = "rhsusf_mkvsoc";                     // These are the boats which spawn at the stern of the Freedom.
 KP_liberation_truck_classname = "rhsusf_M977A4_BKIT_usarmy_wd";         // These are the trucks which are used in the logistic convoy system.
 KP_liberation_small_storage_building = "ContainmentArea_02_sand_F";     // A small storage area for resources.
 KP_liberation_large_storage_building = "ContainmentArea_01_sand_F";     // A large storage area for resources.
@@ -97,11 +98,11 @@ light_vehicles = [
     ["rhsusf_m998_w_4dr",30,0,50],                                     // M998 (4D)
     ["rhsusf_m1151_m2crows_usarmy_wd",100,40,50],                      // M1151 (M2 Crows)
     ["rhsusf_m1151_mk19crows_usarmy_wd",100,60,50],                    // M1151 (Mk.19 Crows)
-    ["rhsusf_m1165a1_gmv_m134d_m240_socom_d",120,80,50], 
-    ["rhsusf_m1165a1_gmv_m2_m240_socom_d",120,80,50], 
-    ["rhsusf_m1165a1_gmv_mk19_m240_socom_d",120,100,50], 
-    ["rhsusf_M1078A1P2_WD_fmtv_usarmy",100,0,70], 
-    ["rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy",120,40,70], 
+    ["rhsusf_m1165a1_gmv_m134d_m240_socom_d",120,80,50],
+    ["rhsusf_m1165a1_gmv_m2_m240_socom_d",120,80,50],
+    ["rhsusf_m1165a1_gmv_mk19_m240_socom_d",120,100,50],
+    ["rhsusf_M1078A1P2_WD_fmtv_usarmy",100,0,70],
+    ["rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy",120,40,70],
     ["rhsusf_M1078A1P2_WD_flatbed_fmtv_usarmy",90,0,70],
     ["rhsusf_M1220_usarmy_wd",120,0,60],                                // M1220
     ["rhsusf_M1237_M2_usarmy_wd",120,40,60],                            // M1220 (M2)
@@ -216,7 +217,7 @@ air_vehicles = [
     ["USAF_F22",1300,1300,400],                                         // F-22A Raptor
     ["USAF_F22_EWP_AA",1300,1300,400],                                  // F-22A Raptor (EWP-AA)
     ["USAF_F22_EWP_AG",1300,1300,400],                                  // F-22A Raptor (EWP-AG)
-    ["EAWS_EF2000_GER_CAP",1300,1300,400], 
+    ["EAWS_EF2000_GER_CAP",1300,1300,400],
     ["USAF_F22_Heavy",1500,1500,500],                                   // F-22A Raptor (Heavy)
     ["FIR_F23A_Black",1500,1500,500],
     ["FIR_AV8B_GR9A_2",1000,1000,400],

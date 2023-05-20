@@ -6,7 +6,7 @@ waitUntil {sleep 1; !isNil "active_sectors"};
         _args params [];
 
         private _markedgroups = 0;
-    
+
     {
         private _groupOwner = groupOwner _x;
         private _owner = "Server";

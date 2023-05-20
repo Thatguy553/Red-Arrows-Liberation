@@ -49,10 +49,3 @@ if ([
         [KPLIB_suppMod_arty] call BIS_fnc_moduleSupportsInitProvider;
     };
 };
-
-// Cam Lao Nam SOGPF traits
-if (worldName == "Cam_Lao_Nam") then {
-    player setUnitTrait ["camouflageCoef", 0.6];
-    player setUnitTrait ["audibleCoef", 0.3];
-    player setUnitTrait ["loadCoef", 0.5];
-};

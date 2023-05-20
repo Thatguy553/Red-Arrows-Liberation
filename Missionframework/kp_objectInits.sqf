@@ -24,10 +24,35 @@
 */
 
 KPLIB_objectInits = [
-    // Set CAV logo on white flag
+    // Set KP logo on white flag
     [
         ["Flag_White_F"],
         {_this setFlagTexture "res\flag_00_ca.paa";}
+    ],
+
+    [
+        ["trashcan_classname"],
+        {
+            [this,
+                [
+                    "Delete Trash",
+                    {
+                        params["_target"];
+                        { deleteVehicle _x; } forEach nearestObjects [getpos _target,["WeaponHolder","GroundWeaponHolder"],1000];
+                    },
+                    nil,        // arguments
+                    1.5,        // priority
+                    true,        // showWindow
+                    true,        // hideOnUse
+                    "",            // shortcut
+                    "true",     // condition
+                    50,            // radius
+                    false,        // unconscious
+                    "",            // selection
+                    ""            // memoryPoint
+                ]
+            ] remoteExec ["addAction", 0];
+        }
     ],
 
     [["Land_Medevac_house_V1_F"], {_trgr = createTrigger ["EmptyDetector", getPosWorld _this, false]; _trgr setTriggerArea [5, 5, 0, false, 5]; _trgr setTriggerActivation ["WEST", "PRESENT", true]; _trgr setTriggerStatements ["this", "{_x call ace_medical_treatment_fnc_fullHealLocal} foreach thislist ", ""];}],
@@ -110,7 +135,7 @@ KPLIB_objectInits = [
     [
         ["Box_T_NATO_Wps_F", "Box_T_NATO_WpsSpecial_F", "Box_NATO_Equip_F"],
         {
-        clearWeaponCargo _this; 
+        clearWeaponCargo _this;
         clearMagazineCargo _this;
         clearItemCargo _this;
         }
@@ -136,7 +161,7 @@ KPLIB_objectInits = [
         ["B_Slingload_01_Ammo_F"],
         {[_this, 9000] call ace_rearm_fnc_setSupplyCount;}
     ],
-    //FUEL Supply Changes 
+    //FUEL Supply Changes
     [
         ["B_Slingload_01_Fuel_F"],
         {[_this, 40000] call ace_refuel_fnc_setFuel;}
@@ -179,12 +204,12 @@ KPLIB_objectInits = [
         ["vn_b_wheeled_m54_ammo", "vn_b_wheeled_m54_ammo_airport"],
         {[_this, 4000] call ace_rearm_fnc_setSupplyCount;}
     ],
-    //add vn repair trucks to var for repairs function 
+    //add vn repair trucks to var for repairs function
     [
         ["vn_b_wheeled_m54_repair", "vn_b_wheeled_m54_repair_airport"],
         {_this setVariable ["ACE_isRepairVehicle", 1, true];}
     ],
-    //add vn fuel trucks for refuel function 
+    //add vn fuel trucks for refuel function
     [
         ["vn_b_wheeled_m54_fuel", "vn_b_wheeled_m54_fuel_airport"],
         {[_this, 20000] call ace_refuel_fnc_makeSource;}

@@ -6,7 +6,7 @@ waitUntil {save_is_loaded};
 
 [
     {
-        
+
         private _default_permissions = [];
     {if ((_x select 0) == "Default") exitWith {_default_permissions = (_x select 2);}} foreach GRLIB_permissions;
 
